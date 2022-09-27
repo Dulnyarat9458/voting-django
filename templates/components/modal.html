@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+<div
+  class="modal fade"
+  id="choice-modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-img" class="responsive"></img>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          ยกเลิก
+        </button>
+        <form method="post" action="confirmvote/">
+          {% csrf_token %}
+          
+          <input type="hidden" name="choice-id" id="modal-id" value="">
+          <input type="submit" class="btn btn-primary" value="ยืนยัน"></input>
+        </form>
+      </div>  
+    </div>
+  </div>
+
+</div>
+{% endblock %}

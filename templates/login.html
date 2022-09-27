@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h1>LOGIN</h1>
+<form method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value="Sign In">
+</form>
+<br><br>
+<a 
+class="btn main-btn nav-btn"
+href="{% url 'reset_password' %}"
+>
+ลืมรหัสผ่าน
+</a>
+{% endblock %}

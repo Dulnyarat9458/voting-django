@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% load static %} {% block content %} 
+{% include 'components/modal.html' %}
+
+<div class="container">
+  <h1>HOME</h1>
+  <h2>เลือกคู่จิ้นที่คุณชอบ</h2>
+
+  {% for c in choice %}
+  <div
+    style="width: 300px"
+    id="choice-{{c.id}}"
+    onclick="showModal('{{c.id}}','{{c.name}}','{{c.upload_pic.url}}')"
+  >
+    <img src="{{ c.upload_pic.url }}" style="width: 300px" />
+    <div>{{ c.name }}</div>
+    <br /><br />
+  </div>
+  {% endfor %}
+
+  <a class="btn main-btn nav-btn" href="{% url 'logout' %}"> ออกจากระบบ </a>
+</div>
+
+<script type="text/javascript">
+  function showModal(id, name, imgUrl) {
+    console.log(name);
+    console.log(imgUrl);
+
+    $(document).ready(function () {
+      $("#choice-modal").modal("show");
+      document.getElementById('modal-title').innerHTML = name;
+      document.getElementById('modal-img').src = imgUrl;
+      document.getElementById('modal-id').value = id;
+    });
+
+  }
+</script>
+
+{% endblock %}

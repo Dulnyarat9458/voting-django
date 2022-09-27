@@ -1,0 +1,17 @@
+asgiref==3.5.2
+autopep8==1.6.0
+distlib==0.3.5
+Django==4.1
+django-phone-auth==0.3.1
+django-phonenumber-field==7.0.0
+filelock==3.7.1
+mysqlclient==2.1.1
+phonenumbers==8.12.54
+platformdirs==2.5.2
+psycopg2-binary==2.9.3
+pycodestyle==2.9.1
+PyMySQL==1.0.2
+sqlparse==0.4.2
+toml==0.10.2
+virtualenv==20.16.2
+Pillow
